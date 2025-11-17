@@ -41,7 +41,6 @@ body::before{
 
 /* cards / products */
 
-/* Minimal grid for dashboard */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -59,7 +58,7 @@ body::before{
   border-radius: 8px;
   padding: 0;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
 }
@@ -75,10 +74,10 @@ body::before{
   padding: 10px 12px;
 }
 .card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--accent-white);
-  margin: 0 0 8px;
+  margin: 0 0 4px;
+  color: #222;
+  font-size: 15px;
+  font-weight: 600;
 }
 .card p {
   font-size: 13px;
@@ -97,11 +96,9 @@ body::before{
   font-size: 14px;
 }
 .card .actions {
-  border-color: var(--neon-blue);
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 212, 255, 0.3);
-  border-width: 2px;
+  display: none;
 }
+
 
 /* forms */
 .form{
