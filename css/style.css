@@ -59,7 +59,7 @@ body::before{
   border-radius: 8px;
   padding: 0;
   border: 1px solid #e0e0e0;
-  box-shadow: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -97,7 +97,10 @@ body::before{
   font-size: 14px;
 }
 .card .actions {
-  display: none;
+  border-color: var(--neon-blue);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 212, 255, 0.3);
+  border-width: 2px;
 }
 
 /* forms */
