@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
           const imageSrc = p.imageUrl.startsWith('http') ? p.imageUrl : ((window.API_URL || window.location.origin) + p.imageUrl);
           imageHtml = `<img src="${imageSrc}" alt="${p.name}" style="width:100%;height:90px;object-fit:cover;border-radius:0" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#f0f0f0';this.parentElement.innerHTML='<div style=\\'width:100%;height:90px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px\\'>📷 No image</div>'"/>`;
         } else {
-          imageHtml = '<div style="width:100%;height:90px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;border-radius:0">📷 No image</div>';
+          imageHtml = '<div style="width:100%;height:90px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;border-radius:0"</div>';
         }
         
         div.innerHTML = `
@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
   }
 });
+
 
 
 
