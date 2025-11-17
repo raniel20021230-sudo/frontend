@@ -103,15 +103,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const div = document.createElement('div');
         div.className = 'card static-card';
         
-        // Build image HTML with cache-busting
+        // Build image HTML with proper URL
         let imageHtml = '';
         if (p.imageUrl) {
           const imageSrc = p.imageUrl.startsWith('http') ? p.imageUrl : ((window.API_URL || window.location.origin) + p.imageUrl);
-          imageHtml = `<img src="${imageSrc}" alt="${p.name}" style="width:100%;height:90px;object-fit:cover;border-radius:0" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#f0f0f0';this.parentElement.innerHTML='<div style=\'width:100%;height:90px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px\'>📷 No image</div>'"/>
+          imageHtml = `<img src="${imageSrc}" alt="${p.name}" style="width:100%;height:90px;object-fit:cover;border-radius:0" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#f0f0f0';this.parentElement.innerHTML='<div style=\\'width:100%;height:90px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px\\'>📷 No image</div>'"/>`;
         } else {
           imageHtml = '<div style="width:100%;height:90px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:11px;border-radius:0">📷 No image</div>';
         }
-        
         
         div.innerHTML = `
           ${imageHtml}
@@ -155,7 +154,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
           
           const preview = document.getElementById('edit-image-preview');
           if (p.imageUrl) {
-            const imageSrc = p.imageUrl.startsWith('http') ? p.imageUrl : (window.location.origin + p.imageUrl);
+            const imageSrc = p.imageUrl.startsWith('http') ? p.imageUrl : ((window.API_URL || window.location.origin) + p.imageUrl);
             preview.innerHTML = `<img src="${imageSrc}" style="width:100%;height:100%;object-fit:cover"/>`;
           } else {
             preview.innerHTML = '';
@@ -205,7 +204,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const f = fileInput.files[0];
             if(!f) {
               if (p.imageUrl) {
-                const imageSrc = p.imageUrl.startsWith('http') ? p.imageUrl : (window.location.origin + p.imageUrl);
+                const imageSrc = p.imageUrl.startsWith('http') ? p.imageUrl : ((window.API_URL || window.location.origin) + p.imageUrl);
                 preview.innerHTML = `<img src="${imageSrc}" style="width:100%;height:100%;object-fit:cover"/>`;
               } else {
                 preview.innerHTML = '';
@@ -224,4 +223,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
   }
 });
+
+
 
