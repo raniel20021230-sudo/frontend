@@ -75,10 +75,10 @@ body::before{
   padding: 10px 12px;
 }
 .card h3 {
-  margin: 0 0 4px;
-  color: #222;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-white);
+  margin: 0 0 8px;
 }
 .card p {
   font-size: 13px;
